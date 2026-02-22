@@ -1,0 +1,136 @@
+:root {
+  --bg-color: #f0f4f8;
+  --bg-gradient: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-border: rgba(255, 255, 255, 0.8);
+  --accent: #3b82f6;
+  --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  --nav-bg: rgba(255, 255, 255, 0.7);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
+}
+
+[data-theme='dark'] {
+  --bg-color: #0f172a;
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --accent: #60a5fa;
+  --accent-gradient: linear-gradient(135deg, #60a5fa, #a78bfa);
+  --nav-bg: rgba(15, 23, 42, 0.7);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 10px 25px -5px rgba(96, 165, 250, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.7;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent);
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Layout */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+}
+
+/* Gradients for Text */
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* Premium Card with Glassmorphism */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-main);
+}
+
+.card-subtitle {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Tech Tags/Badges */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: rgba(100, 116, 139, 0.1);
+  color: var(--text-main);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--card-border);
+}
