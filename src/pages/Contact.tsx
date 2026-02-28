@@ -16,7 +16,7 @@ export default function Contact() {
     // REPLACE THESE WITH YOUR ACTUAL EMAILJS KEYS
     // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
     emailjs.sendForm('service_lnf23xd', 'template_0afyqma', form.current, 'tLIi0nyErDSxSpsVe')
-      .then((result) => {
+      .then((_result) => {
           setStatusMessage('✅ Message sent successfully!');
           form.current?.reset();
       }, (error) => {
