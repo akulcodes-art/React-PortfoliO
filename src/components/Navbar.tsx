@@ -36,9 +36,10 @@ export default function Navbar() {
       <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
         <Link to="/" style={getLinkStyle('/')}>About</Link>
         <Link to="/experience" style={getLinkStyle('/experience')}>Experience</Link>
+        {/* Added Education Link Here */}
+        <Link to="/education" style={getLinkStyle('/education')}>Education</Link>
         <Link to="/projects" style={getLinkStyle('/projects')}>Projects</Link>
-        
-        {/* Theme Toggle Button */}
+        <Link to="/contact" style={getLinkStyle('/contact')}>Contact</Link>
         <button 
           onClick={toggleTheme}
           style={{ 

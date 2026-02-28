@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Experience from './pages/Experience';
 import Projects from './pages/Projects';
+import Education from './pages/Education';
+import Contact from './pages/Contact'; // 1. Import Contact
 
 export default function App() {
   return (
@@ -13,7 +15,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="/education" element={<Education />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} /> {/* 2. Add Route */}
         </Routes>
       </Router>
     </ThemeProvider>
